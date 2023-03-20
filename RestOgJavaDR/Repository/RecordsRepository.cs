@@ -10,9 +10,26 @@ namespace RestOgJavaDR.Repository
             new Records(){title = "DiscoNight", artist ="Bob", duration = 150, publicationYear = 2022},
         };
 
-        public List<Records> GetAll()
+        public List<Records> GetAll(string title = null, string _sortBy = null)
         {
-            return new List<Records>(data);
+
+            List<Records> records = new List<Records>(data);
+
+            if(title != null)
+            {
+                records = records.FindAll(record => record.title != null && record.title.StartsWith(title));
+            }
+            if(_sortBy != null)
+            {
+                switch (_sortBy.ToLower())
+                {
+                    case "title":
+                        records = records.OrderBy(record => record.title).ToList();
+                        break;
+                    case "artist":
+                }
+            }
+            return null;
         }
     }
 }

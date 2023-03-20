@@ -24,6 +24,11 @@ namespace RestOgJavaDR.Controllers
         {
             return "value";
         }
+        [HttpGet]
+        public string GetByFilter([FromQuery]string title, [FromQuery] string artist)
+        {
+            return repo.GetAll(title, _sortBy);
+        }
 
         // POST api/<RecordsController>
         [HttpPost]
