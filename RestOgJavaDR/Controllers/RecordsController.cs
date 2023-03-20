@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using RestOgJavaDR.Model;
 using RestOgJavaDR.Repository;
 
@@ -25,9 +26,9 @@ namespace RestOgJavaDR.Controllers
             return "value";
         }
         [HttpGet]
-        public string GetByFilter([FromQuery]string title, [FromQuery] string artist)
+        public string GetByFilter([FromQuery]string title, [FromQuery] string artist, [FromQuery] string _sortBy)
         {
-            return repo.GetAll(title, _sortBy);
+            return repo.GetAll(title, artist, _sortBy);
         }
 
         // POST api/<RecordsController>
