@@ -12,7 +12,7 @@ namespace RestOgJavaDR.Repository
             new Records(){title = "DiscoNight", artist ="Bob", duration = 150, publicationYear = 2022},
         };
 
-        public List<Records> GetAll(string title = null, string artist = null, string _sortBy = null)
+        public List<Records> GetAll(string? title = null, string? artist = null, string? _sortBy = null)
         {
 
             List<Records> records = new List<Records>(data);

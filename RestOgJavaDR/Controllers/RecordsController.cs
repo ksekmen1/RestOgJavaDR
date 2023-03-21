@@ -23,15 +23,15 @@ namespace RestOgJavaDR.Controllers
             return "value";
         }
 
-        [ProducesResponseType (StatusCodes.Status404NotFound)]
+        
         [ProducesResponseType (StatusCodes.Status200OK)]
         [HttpGet]
-        public IEnumerable<Records> GetByFilter([FromQuery]string title = null, [FromQuery] string artist = null, [FromQuery] string _sortBy = null)
+        public ActionResult<IEnumerable<Records>> GetByFilter([FromQuery]string title = null, [FromQuery] string artist = null, [FromQuery] string _sortBy = null)
         {
-            Records record = repo.GetAll(title, artist, _sortBy);
-            if (record == null) return NotFound("Couldnt find result");
+            IEnumerable<Records>records = repo.GetAll(title, artist, _sortBy);
             
-            return Ok(record);
+            
+            return Ok(records);
         }
 
         // POST api/<RecordsController>
