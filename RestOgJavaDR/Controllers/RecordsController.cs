@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using RestOgJavaDR.Model;
 using RestOgJavaDR.Repository;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,10 +22,16 @@ namespace RestOgJavaDR.Controllers
         {
             return "value";
         }
+
+        [ProducesResponseType (StatusCodes.Status404NotFound)]
+        [ProducesResponseType (StatusCodes.Status200OK)]
         [HttpGet]
         public IEnumerable<Records> GetByFilter([FromQuery]string title = null, [FromQuery] string artist = null, [FromQuery] string _sortBy = null)
         {
-            return repo.GetAll(title, artist, _sortBy);
+            Records record = repo.GetAll(title, artist, _sortBy);
+            if (record == null) return NotFound("Couldnt find result");
+            
+            return Ok(record);
         }
 
         // POST api/<RecordsController>
