@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestOgJavaDR", "RestOgJavaDR\RestOgJavaDR.csproj", "{08929553-CA26-4D51-9E44-F6732BB963FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestOgJavaDRTests", "RestOgJavaDRTests\RestOgJavaDRTests.csproj", "{A04B27BB-57DC-48C3-8884-02C83C5D6AD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestOgJavaDRTests1", "RestOgJavaDRTests1\RestOgJavaDRTests1.csproj", "{C8BFBB2F-066C-4ABE-AC71-72EA7A5CA07D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{08929553-CA26-4D51-9E44-F6732BB963FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08929553-CA26-4D51-9E44-F6732BB963FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08929553-CA26-4D51-9E44-F6732BB963FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A04B27BB-57DC-48C3-8884-02C83C5D6AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A04B27BB-57DC-48C3-8884-02C83C5D6AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A04B27BB-57DC-48C3-8884-02C83C5D6AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A04B27BB-57DC-48C3-8884-02C83C5D6AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8BFBB2F-066C-4ABE-AC71-72EA7A5CA07D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BFBB2F-066C-4ABE-AC71-72EA7A5CA07D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BFBB2F-066C-4ABE-AC71-72EA7A5CA07D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BFBB2F-066C-4ABE-AC71-72EA7A5CA07D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

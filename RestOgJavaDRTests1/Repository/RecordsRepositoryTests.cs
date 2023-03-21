@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RestOgJavaDR.Model;
 using RestOgJavaDR.Repository;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,10 @@ namespace RestOgJavaDR.Repository.Tests
         [TestMethod()]
         public void GetAllTest()
         {
+            RecordsRepository repo = new RecordsRepository();
 
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void GetAllTest1()
-        {
-
+            List<Records> allrecords = repo.GetAll();
+            Assert.AreEqual(2, allrecords.Count);
         }
     }
 }
