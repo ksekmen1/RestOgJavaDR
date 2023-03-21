@@ -26,7 +26,7 @@ namespace RestOgJavaDR.Controllers
             return "value";
         }
         [HttpGet]
-        public IEnumerable<Record> GetByFilter([FromQuery]string title, [FromQuery] string artist, [FromQuery] string _sortBy)
+        public IEnumerable<Records> GetByFilter([FromQuery]string title, [FromQuery] string artist, [FromQuery] string _sortBy)
         {
             return repo.GetAll(title, artist, _sortBy);
         }
