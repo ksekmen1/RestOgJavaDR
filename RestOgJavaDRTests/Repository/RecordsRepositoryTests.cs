@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestOgJavaDR.Model;
 
 namespace RestOgJavaDR.Repository.Tests
 {
@@ -14,7 +15,8 @@ namespace RestOgJavaDR.Repository.Tests
         [TestMethod()]
         public void GetAllTest()
         {
-
+            RecordsRepository record = new Records();
+            List<Record>
             Assert.Fail();
         }
     }
