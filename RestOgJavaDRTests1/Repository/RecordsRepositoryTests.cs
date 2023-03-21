@@ -12,13 +12,26 @@ namespace RestOgJavaDR.Repository.Tests
     [TestClass()]
     public class RecordsRepositoryTests
     {
+        RecordsRepository repo = new RecordsRepository();
         [TestMethod()]
         public void GetAllTest()
         {
-            RecordsRepository repo = new RecordsRepository();
 
             List<Records> allrecords = repo.GetAll();
             Assert.AreEqual(2, allrecords.Count);
+        }
+        [TestMethod()]
+        public void SortByArtistTest()
+        {
+
+            List<Records> KRecords = repo.GetAll(artist: "K");
+            Assert.AreEqual(1, KRecords.Count);
+        }
+        [TestMethod()]
+        public void SortByTitleTest() 
+        {
+            List<Records> SRecords = repo.GetAll(title: "s");
+            Assert.AreEqual(1, SRecords.Count);
         }
     }
 }
