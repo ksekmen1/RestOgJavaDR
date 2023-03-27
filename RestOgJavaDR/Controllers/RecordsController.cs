@@ -35,7 +35,6 @@ namespace RestOgJavaDR.Controllers
         {
             IEnumerable<Records>records = _repository.GetAll(title, artist, _sortBy);
             
-            
             return Ok(records);
         }
 
