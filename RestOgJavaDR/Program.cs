@@ -28,7 +28,7 @@ if (useSql) {
     var optionsBuilder = new DbContextOptionsBuilder<KRDBContext>();
     optionsBuilder.UseSqlServer(Secrets.ConnectionString);
     KRDBContext context = new KRDBContext(optionsBuilder.Options);
-    builder.Services.AddSingleton<RecordsRepository>(
+    builder.Services.AddSingleton<IRecordsRepository>(
         new RecordsRepoDb(context));
 }
 else
