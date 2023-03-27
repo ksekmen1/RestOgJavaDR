@@ -3,6 +3,7 @@ using RestOgJavaDR.Models;
 
 using RestOgJavaDR;
 using RestOgJavaDR.Repository;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,13 @@ if (useSql) {
     var optionsBuilder = new DbContextOptionsBuilder<KRDBContext>();
     optionsBuilder.UseSqlServer(Secrets.ConnectionString);
     KRDBContext context = new KRDBContext(optionsBuilder.Options);
-    builder.Services.AddSingleton<RecordsRepository>()
+    builder.Services.AddSingleton<RecordsRepository>(
+        new RecordsRepoDb(context));
+}
+else
+{
+    builder.Services.AddSingleton<IRecordsRepository>
+        (new RecordsRepository());
 }
 
 
