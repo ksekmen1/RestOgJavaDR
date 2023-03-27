@@ -15,9 +15,10 @@ namespace RestOgJavaDR.Repository
 
         public List<Records> GetAll(string? namefilter = null)
         {
-            return _context.Records.Where(record => (namefilter == null || record.title.Contains(namefilter, StringComparison.InvariantCultureIgnoreCase)).ToList()
+            return _context.Records.Where(record => 
+            namefilter == null || record.title.Contains(namefilter, StringComparison.InvariantCultureIgnoreCase)
 
-            );
+            ).ToList();
         }
     }
 }
