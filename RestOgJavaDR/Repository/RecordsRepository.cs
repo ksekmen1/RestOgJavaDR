@@ -1,4 +1,5 @@
-﻿using RestOgJavaDR.Models;
+﻿
+using RestOgJavaDR.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,7 +14,7 @@ namespace RestOgJavaDR.Repository
             new Records(){Id =_nextId++,title = "DiscoNight", artist ="Bob", duration = 150, publicationYear = 2022},
         };
 
-        public List<Records> GetAll(string? title = null, string? artist = null, string? _sortBy = null)
+        public List<Records> GetAll(string? namefilter = null, string? artist = null, string? _sortBy = null)
         {
 
             List<Records> records = new List<Records>(data);
@@ -21,9 +22,9 @@ namespace RestOgJavaDR.Repository
             {
                 records = records.FindAll(record => record.artist != null && record.artist.StartsWith(artist));
             }
-            if (title != null)
+            if (namefilter != null)
             {
-                records = records.FindAll(record => record.title != null && record.title.StartsWith(title));
+                records = records.FindAll(record => record.title.Contains(namefilter, StringComparison.InvariantCultureIgnoreCase)); 
             }
             if (_sortBy != null)
             {
@@ -39,6 +40,8 @@ namespace RestOgJavaDR.Repository
                 }
             }
             return records;
-        }
+        } 
+
+       
     }
 }
