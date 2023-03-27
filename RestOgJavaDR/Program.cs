@@ -1,3 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using RestOgJavaDR.Models;
+
+using RestOgJavaDR;
+using RestOgJavaDR.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
@@ -15,6 +21,16 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+bool useSql = true;
+if (useSql) {
+    var optionsBuilder = new DbContextOptionsBuilder<KRDBContext>();
+    optionsBuilder.UseSqlServer(Secrets.ConnectionString);
+    KRDBContext context = new KRDBContext(optionsBuilder.Options);
+    builder.Services.AddSingleton<RecordsRepository>()
+}
+
+
 
 builder.Services.AddSwaggerGen(c => {
     c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());

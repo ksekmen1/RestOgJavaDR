@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using RestOgJavaDR.Model;
+using RestOgJavaDR.Models;
 using RestOgJavaDR.Repository;
 using Microsoft.AspNetCore.Http;
 
