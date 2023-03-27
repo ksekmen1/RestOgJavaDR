@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RestOgJavaDR.Repository
 {
-    public class RecordsRepository
+    public class RecordsRepository : IRecordsRepository
     {
         private static int _nextId = 1;
         private static List<Records> data = new List<Records>()
@@ -17,15 +17,15 @@ namespace RestOgJavaDR.Repository
         {
 
             List<Records> records = new List<Records>(data);
-            if(artist!= null)
+            if (artist != null)
             {
                 records = records.FindAll(record => record.artist != null && record.artist.StartsWith(artist));
             }
-            if(title != null)
+            if (title != null)
             {
                 records = records.FindAll(record => record.title != null && record.title.StartsWith(title));
             }
-            if(_sortBy != null)
+            if (_sortBy != null)
             {
                 switch (_sortBy.ToLower())
                 {
