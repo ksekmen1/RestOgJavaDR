@@ -13,7 +13,7 @@ namespace RestOgJavaDR.Repository
             _context = context;
         }
 
-        public List<Records> GetAll(string? namefilter = null)
+        public List<Records> GetAll(string? namefilter = null, string? artist = null, string? _sortBy = null)
         {
             return _context.Records.Where(record => 
             namefilter == null || record.title.Contains(namefilter, StringComparison.InvariantCultureIgnoreCase)
