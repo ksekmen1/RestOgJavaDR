@@ -12,7 +12,12 @@ namespace RestOgJavaDR.Controllers
     [ApiController]
     public class RecordsController : ControllerBase
     {
-        private readonly RecordsRepository repo = new RecordsRepository();
+        private IRecordsRepository _repository;
+
+        public RecordsController(IRecordsRepository repository)
+        {
+            _repository = repository;
+        }
         // GET: api/<RecordsController>
        
 
@@ -28,7 +33,7 @@ namespace RestOgJavaDR.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Records>> GetByFilter([FromQuery]string title = null, [FromQuery] string artist = null, [FromQuery] string _sortBy = null)
         {
-            IEnumerable<Records>records = repo.GetAll(title, artist, _sortBy);
+            IEnumerable<Records>records = _repository.GetAll(title, artist, _sortBy);
             
             
             return Ok(records);
