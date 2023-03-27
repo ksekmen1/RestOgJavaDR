@@ -3,7 +3,7 @@ using RestOgJavaDR.Repository;
 
 namespace RestOgJavaDR.Repository
 {
-    public class RecordsRepoDb 
+    public class RecordsRepoDb
     {
         private KRDBContext _context;
         
