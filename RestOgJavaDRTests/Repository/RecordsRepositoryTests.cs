@@ -19,5 +19,11 @@ namespace RestOgJavaDR.Repository.Tests
             List<Record>
             Assert.Fail();
         }
+
+        [TestMethod()]
+        public void GetAllTest1()
+        {
+
+        }
     }
 }

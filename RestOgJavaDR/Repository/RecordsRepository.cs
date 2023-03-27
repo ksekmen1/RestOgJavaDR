@@ -1,4 +1,4 @@
-﻿using RestOgJavaDR.Model;
+﻿using RestOgJavaDR.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,10 +6,11 @@ namespace RestOgJavaDR.Repository
 {
     public class RecordsRepository
     {
+        private static int _nextId = 1;
         private static List<Records> data = new List<Records>()
         {
-            new Records(){title = "starlight", artist ="Karsten", duration = 120, publicationYear = 2001},
-            new Records(){title = "DiscoNight", artist ="Bob", duration = 150, publicationYear = 2022},
+            new Records(){Id =_nextId++,title = "starlight", artist ="Karsten", duration = 120, publicationYear = 2001},
+            new Records(){Id =_nextId++,title = "DiscoNight", artist ="Bob", duration = 150, publicationYear = 2022},
         };
 
         public List<Records> GetAll(string? title = null, string? artist = null, string? _sortBy = null)
