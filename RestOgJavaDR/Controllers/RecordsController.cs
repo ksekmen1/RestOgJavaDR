@@ -35,10 +35,20 @@ namespace RestOgJavaDR.Controllers
         }
 
         // POST api/<RecordsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        /*[HttpPost]
+        public ActionResult<Records> Post([FromBody] Records value)
         {
-        }
+            try
+            {
+                Records newRecords = repo.Add(value);
+                string uri = Url.RouteUrl(RouteData.Values) + "/" + newRecords.title;
+                return Created(uri, newRecords);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        } */
 
         // PUT api/<RecordsController>/5
         [HttpPut("{id}")]
